@@ -12,11 +12,11 @@ $words=explode(" ",$text);
 
 $firstLastWord=mb_convert_encoding(array_pop($words), "utf-8");
 
-$secondLastWord= mb_convert_encoding(array_pop($words), "utf-8").":";
+$secondLastWord= mb_convert_encoding(array_pop($words), "utf-8")."...";
 
-$lengthWords=iconv_strlen($firstLastWord,"utf-8")+iconv_strlen($secondLastWord,"utf-8");
+$lengthWords=iconv_strlen($secondLastWord,"utf-8")+iconv_strlen($firstLastWord,"utf-8");
 
-$link="<a href=\"page.php\">$firstLastWord $secondLastWord</a>";
+$link="<a href=\"page.php\">$secondLastWord $firstLastWord</a>";
 
 $b =mb_convert_encoding( mb_convert_encoding(substr($a, 0, 180-$lengthWords),   "utf-8","utf-8").$link,   "utf-8","utf-8") ;
 
